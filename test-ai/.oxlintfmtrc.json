@@ -1,0 +1,55 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto",
+  "htmlWhitespaceSensitivity": "css",
+  "jsxSingleQuote": true,
+  "sortPackageJson": false,
+  "overrides": [
+    {
+      "files": ["*.json"],
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.md"],
+      "options": {
+        "printWidth": 80,
+        "proseWrap": "always"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "build",
+    "src/protos-gen",
+    "*.min.js",
+    "*.min.css",
+    "logs",
+    "*.log",
+    ".env*",
+    ".vscode",
+    ".idea",
+    ".DS_Store",
+    "Thumbs.db",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "coverage",
+    "*.tsbuildinfo",
+    ".nyc_output"
+  ]
+}
