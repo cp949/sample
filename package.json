@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "lint": "oxlint --max-warnings 10 .",
+    "format": "oxfmt --write",
+    "lint:fix": "oxlint --fix .",
+    "format:check": "oxfmt --check"
+  },
+  "devDependencies": {
+    "oxlint": "1.90.0",
+    "oxlint-tsgolint": "7.0.2005",
+    "oxfmt": "0.75.0"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0",
+    "npm": ">=10.9"
+  }
+}

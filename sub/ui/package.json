@@ -1,0 +1,4 @@
+{
+    "lint": "oxlint . --max-warnings 10",
+    "unuse_type-check": "tsc --pretty --noEmit "
+} 

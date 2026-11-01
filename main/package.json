@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "lint": "oxlint . --max-warnings 10"
+  } 
+}
