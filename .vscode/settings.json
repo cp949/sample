@@ -1,4 +1,7 @@
 {
   "editor.defaultFormatter": "oxc.oxc-vscode",
-  "oxc.enable": true
+  "oxc.enable": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }

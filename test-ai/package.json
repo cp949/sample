@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "lint": "oxlint src --fix",
+    "lint:check": "oxlint src",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint:fix": "pnpm run lint && pnpm run format"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.90.0",
+    "oxlint-tsgolint": "^7.0.2005"
+  }
+}
