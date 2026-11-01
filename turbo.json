@@ -1,0 +1,65 @@
+{
+  "$schema": "https://v2-10-11.turborepo.dev/schema.json",
+  "globalDependencies": ["**/.env.*local", "config/oxlint/**", ".oxlintrc.json"],
+  "globalEnv": [
+    "NODE_ENV",
+    "NEXT_PUBLIC_DEBUG",
+    "NEXT_PUBLIC_BASE_URL",
+    "NEXT_PUBLIC_API_BASE_URL",
+    "NEXT_PUBLIC_AI_API_BASE_URL",
+    "NEXT_PUBLIC_DATI_BASE_URL",
+    "NEXT_PUBLIC_GOOGLE_RECAPTCHA_V3_SITE_KEY",
+    "NEXT_PUBLIC_ROUTER_BASE_URL"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**", "lib/**"],
+      "cache": true,
+      "env": ["NODE_ENV"],
+      "outputLogs": "new-only"
+    },
+    "build:dev": {
+      "dependsOn": ["^build:dev"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "public/dist/**", "lib/**"],
+      "cache": true,
+      "outputLogs": "new-only"
+    },
+    "build:lib": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["dist/**", "lib/**", "build/**"],
+      "cache": true,
+      "outputLogs": "new-only"
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "inputs": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs", "**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts", ".oxlintrc.json", "package.json"],
+      "outputs": [],
+      "cache": true,
+      "outputLogs": "errors-only"
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"],
+      "inputs": ["**/*.ts", "**/*.tsx", "src/**/*.mjs", "src/**/*.d.mts", "**/tsconfig.json", "**/tsconfig.*.json"],
+      "outputs": [],
+      "cache": true,
+      "outputLogs": "errors-only"
+    },
+    "dev": {
+      "dependsOn": ["build:dev"],
+      "cache": false,
+      "persistent": true,
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "tests/**", "**/*.test.*", "**/*.spec.*", "**/jest.config.*", "**/vitest.config.*"],
+      "outputs": ["coverage/**"],
+      "cache": true,
+      "outputLogs": "new-only"
+    }
+  }
+}
