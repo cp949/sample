@@ -1,0 +1,40 @@
+{
+  // oxc 확장(oxc.oxc-vscode)으로 oxfmt 포맷팅 + oxlint 수정
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+
+  // Format on save
+  "editor.formatOnSave": true,
+
+  // TypeScript/JavaScript specific settings
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.oxc": "explicit"
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.oxc": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+
+  // Disable conflicting formatters
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+
+  // Auto save
+  "files.autoSave": "onFocusChange",
+
+  // End of line
+  "files.eol": "\n",
+
+  // Tab settings to match oxfmt
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true
+}
